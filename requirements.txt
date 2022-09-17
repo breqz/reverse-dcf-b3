@@ -1,0 +1,16 @@
+dash==2.5.1
+json5==0.9.6
+dash-bootstrap-components==1.1.0
+dash-bootstrap-templates==1.0.5
+dash-core-components==2.0.0
+dash-html-components==2.0.0
+dash-table==5.0.0
+numpy==1.21.5
+pandas==1.4.2
+plotly==5.6.0
+waitress==2.1.2
+XlsxWriter==3.0.3
+yfinance==0.1.72
+Flask-Caching==2.0.0
+
+
