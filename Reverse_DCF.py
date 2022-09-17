@@ -12,7 +12,6 @@ from datetime import datetime
 import numpy as np
 import inspect
 from flask_caching import Cache
-from waitress import serve
 import yfinance as yf
 
 def get_shares(empresa,df):
@@ -799,6 +798,6 @@ def toggle_offcanvas(n1, is_open):
         return not is_open
     return is_open
 
-port = int(os.environ.get("PORT", 8080))
-serve(server, port=port)
+if __name__ == '__main__':
+    app.run_server(debug=True)
 
