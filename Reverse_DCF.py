@@ -11,6 +11,7 @@ import dash_bootstrap_components as dbc
 from datetime import datetime
 import numpy as np
 import inspect
+from waitress import serve
 from flask_caching import Cache
 import yfinance as yf
 
@@ -798,6 +799,5 @@ def toggle_offcanvas(n1, is_open):
         return not is_open
     return is_open
 
-if __name__ == '__main__':
-    app.run_server(debug=True)
-
+port = int(os.environ.get("PORT", 8080))
+serve(server, port=port)    
