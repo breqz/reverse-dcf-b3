@@ -630,7 +630,8 @@ def global_df_fc():
     inputs=dict(n_clicks=Input("loading-button", "n_clicks"))
 )
 def carregar_empresa(value,n_clicks):
-    if n_clicks>=1:        
+    if n_clicks>=1:
+        cache.clear()
         df1 = global_df1()
         tickers_b3 = global_tickers_b3()
         nm_empresa = value
