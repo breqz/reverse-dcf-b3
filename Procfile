@@ -1,1 +1,1 @@
-web: waitress-serve --port=$PORT Reverse_DCF:server 
+web: waitress-serve Reverse_DCF:server 
