@@ -1,1 +1,1 @@
-web: waitress-serve Reverse_DCF:server 
+web: waitress-serve --port=8080 Reverse_DCF:server 
