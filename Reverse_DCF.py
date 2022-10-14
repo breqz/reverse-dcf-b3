@@ -393,11 +393,10 @@ CACHE_CONFIG = {
 cache = Cache()
 cache.init_app(app.server, config=CACHE_CONFIG)
 #----------------------------------------------------------------------------------------------------------------------------
-url='https://raw.githubusercontent.com/breqz/reverse-dcf-b3/main/dfp_cia_aberta_DRE_con.csv'
-df1=pd.read_csv(url,sep=',',dtype='str',low_memory=False)
-df1['VL_CONTA'] = pd.to_numeric(df1['VL_CONTA'])
-lista_empresas =  df1['DENOM_CIA'].unique()
-keys = ['label']
+url='https://raw.githubusercontent.com/breqz/reverse-dcf-b3/main/InstrumentsConsolidatedFile.csv'
+df=pd.read_csv(url,sep=',',dtype='str',low_memory=False)
+df=df[(df.SgmtNm=='CASH')&(df.SctyCtgyNm=='SHARES')]
+lista_empresas =  df['CrpnNm'].unique()
 options = {v: v for v in lista_empresas}
 empresa_dropdown = dcc.Dropdown(options=options, 
                                 value='Procure o nome da empresa desejada',
