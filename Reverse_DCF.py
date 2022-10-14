@@ -316,7 +316,10 @@ def dados_da_empresa(empresa,ticker,df1,tickers_b3,df_a,df_p,df_fc,df_itr):
     df_a = df_a[df_a.DENOM_CIA==empresa]
     df_p=df_p[df_p.DENOM_CIA==empresa]
     caixa = df_a[(df_a.ORDEM_EXERC=='ÚLTIMO')&(df_a.DT_FIM_EXERC==df_a.DT_FIM_EXERC.max())&
-                 (df_a.DS_CONTA=='Caixa e Equivalentes de Caixa')
+                 (df_a.DS_CONTA.isin(['Caixa e Equivalentes de Caixa',
+                                    'Aplicações Financeiras',
+                                    'Aplicações de Liquidez',
+                                   'Aplicações no mercado aberto']))
                 ]['VL_CONTA']
     caixa =caixa.values[0]
     current_assets = df_a[(df_a.ORDEM_EXERC=='ÚLTIMO')&(df_a.DT_FIM_EXERC==df_a.DT_FIM_EXERC.max())&
