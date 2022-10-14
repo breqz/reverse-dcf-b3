@@ -321,7 +321,7 @@ def dados_da_empresa(empresa,ticker,df1,tickers_b3,df_a,df_p,df_fc,df_itr):
                                     'Aplicações de Liquidez',
                                    'Aplicações no mercado aberto']))
                 ]['VL_CONTA']
-    caixa =caixa.values[0]
+    caixa =sum(caixa.values)
     current_assets = df_a[(df_a.ORDEM_EXERC=='ÚLTIMO')&(df_a.DT_FIM_EXERC==df_a.DT_FIM_EXERC.max())&
                  (df_a.DS_CONTA=='Ativo Circulante')
                 ]['VL_CONTA'] 
