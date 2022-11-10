@@ -637,7 +637,7 @@ def carregar_empresa(value,n_clicks):
         cache.clear()
         df1 = global_df1()
         tickers_b3 = global_tickers_b3()
-        nm_empresa = value
+        nm_empresa = value.strip()
         empresa = pegar_nome(nm_empresa, df1)
         if 'Mais de um resultado' in empresa or 'N/A' in empresa:
             return '###'+empresa,dash.no_update,dash.no_update
