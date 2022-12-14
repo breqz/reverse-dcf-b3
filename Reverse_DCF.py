@@ -171,7 +171,11 @@ def format_number(format_,number):
     elif type(number)!='str':
         return str(format_.format(number))
     else:
-        return format_.format(number)
+        try:
+            x=format_.format(number)
+            return x
+        except:
+            return number
 def pegar_nome(empresa, df):
     r=[]
     for i in df['DENOM_CIA']:
